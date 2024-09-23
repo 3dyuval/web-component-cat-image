@@ -5,7 +5,7 @@ inherited from `HTMLImageElement`
 
 */
 
-export default class CatImage extends HTMLImageElement {
+export class CatImage extends HTMLImageElement {
   constructor(element, { ...rest } = {}) {
     super(element);
     for (const [key, value] of Object.entries(rest)) {

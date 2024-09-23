@@ -1,0 +1,15 @@
+{
+  "name": "web-component-cat-image",
+  "version": "1.0.0",
+  "description": "https://gomakethings.com/the-elevator-pitch-for-web-components/",
+  "main": "CatImage.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.4.6"
+  }
+}

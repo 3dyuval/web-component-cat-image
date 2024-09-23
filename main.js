@@ -1,4 +1,4 @@
-import CatImage  from "./CatImage.js";
+import {CatImage}  from "./cat-image.js";
 
 // async function getCatImgs() {
 //   return fetch("https://api.thecatapi.com/v1/images/search?limit=1")
