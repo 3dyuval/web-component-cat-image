@@ -5,7 +5,7 @@ inherited from `HTMLImageElement`
 
 */
 
-export class CatImage extends HTMLImageElement {
+export class ImgCat extends HTMLImageElement {
   constructor(element, { ...rest } = {}) {
     super(element);
     for (const [key, value] of Object.entries(rest)) {
@@ -52,11 +52,3 @@ export class CatImage extends HTMLImageElement {
     console.log(`Attribute ${name} has changed.`);
   }
 }
-
-/*
-Use customElements.define() to define your custom element. However,
-for extending built-in elements like HTMLImageElement, you need to
-pass an additional options object specifying the element you're extending.
-*/
-
-customElements.define("cat-image", CatImage, { extends: "img" });

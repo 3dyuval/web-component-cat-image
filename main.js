@@ -1,18 +1,9 @@
-import {CatImage}  from "./cat-image.js";
+import {ImgCat}  from "./cat-image.js";
 
-// async function getCatImgs() {
-//   return fetch("https://api.thecatapi.com/v1/images/search?limit=1")
-//     .then((response) => response.json())
-//     .catch(console.log);
-// }
+/*
+Use customElements.define() to define your custom element. However,
+for extending built-in elements like HTMLImageElement, you need to
+pass an additional options object specifying the element you're extending.
+*/
 
-function appendImages(images) {
-  for (const img of [{}]) {
-    const imgElement = new CatImage(img)
-    const listElement = document.createElement("li");
-    listElement.appendChild(imgElement);
-    document.body.querySelector("#list").appendChild(listElement);
-  }
-}
-
-// getCatImgs().then(appendImages);
+customElements.define("img-cat", ImgCat, { extends: "img" });
