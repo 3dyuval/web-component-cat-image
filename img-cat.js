@@ -1,3 +1,5 @@
+import { getCatImgs } from "./main.js";
+import { Api } from './api.js'
 /*
 
 customized web components for built in element
@@ -6,18 +8,16 @@ inherited from `HTMLImageElement`
 */
 
 export class ImgCat extends HTMLImageElement {
+
+
   constructor(element, { ...rest } = {}) {
     super(element);
     for (const [key, value] of Object.entries(rest)) {
       this.setAttribute(key, value);
     }
+   this.api = Api
   }
 
-  async getCatImgs() {
-    return fetch("https://api.thecatapi.com/v1/images/search?limit=1")
-      .then((response) => response.json())
-      .catch(console.log);
-  }
 
   connectedCallback() {
     if (!this.url) {
@@ -25,7 +25,7 @@ export class ImgCat extends HTMLImageElement {
         src defaults to current url if not provided.
         will use url, which is not part of HTMLImageElement default attributes.
         */
-      this.getCatImgs().then(([img]) => {
+      this.api.getCatImgs().then((img) => {
         this.setAttribute("src", img.url);
         this.setAttribute("id", img.id);
         if (!this.width) {

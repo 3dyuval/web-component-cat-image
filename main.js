@@ -1,4 +1,5 @@
-import {ImgCat}  from "./cat-image.js";
+import {ImgCat}  from "./img-cat.js";
+
 
 /*
 Use customElements.define() to define your custom element. However,
