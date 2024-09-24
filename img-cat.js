@@ -1,4 +1,3 @@
-import { getCatImgs } from "./main.js";
 import { Api } from './api.js'
 /*
 
@@ -15,7 +14,6 @@ export class ImgCat extends HTMLImageElement {
     for (const [key, value] of Object.entries(rest)) {
       this.setAttribute(key, value);
     }
-   this.api = Api
   }
 
 
@@ -25,11 +23,10 @@ export class ImgCat extends HTMLImageElement {
         src defaults to current url if not provided.
         will use url, which is not part of HTMLImageElement default attributes.
         */
-      this.api.getCatImgs().then((img) => {
+        Api.getCatImgs().then((img) => {
         this.setAttribute("src", img.url);
         this.setAttribute("id", img.id);
         if (!this.width) {
-          debugger;
           this.setAttribute("width", img.width);
         }
         if (!this.height) {
